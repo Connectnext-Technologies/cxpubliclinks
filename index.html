@@ -1,86 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL Extraction Test Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        .link-section {
-            margin-bottom: 30px;
-            padding: 15px;
-            background-color: #f5f5f5;
-            border-radius: 5px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-    </style>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>URL Extraction Test Page</h1>
-    <p>This page contains various types of links to test the URL extraction functionality.</p>
-
-    <div class="link-section">
-        <h2>Internal Links (Same Domain)</h2>
+    <h1>Welcome to Test Site</h1>
+    <nav>
         <ul>
-            <li><a href="page1.html">Simple relative link</a></li>
-            <li><a href="./page2.html">Relative link with dot notation</a></li>
-            <li><a href="../page3.html">Parent directory relative link</a></li>
-            <li><a href="../../parent/page4.html">Multiple parent directory relative link</a></li>
-            <li><a href=".././parent/page4.html">Failure Multiple parent directory relative link</a></li>
-            <li><a href="/absolute/path/page5.html">Absolute path link</a></li>
-            <li><a href="/page6.htm">HTML with .htm extension</a></li>
-            <li><a href="subfolder/page7.html?query=test">Relative link with query string</a></li>
-            <li><a href="https://example.com/page8.html">Full URL to same domain</a></li>
-            <li><a href="https://example.com/products/catalog.html?category=books&sort=price">Full URL with complex query string</a></li>
+            <!-- Valid links -->
+            <li><a class="valid" href="products/products.html">Products</a></li>
+            <li><a class="valid" href="https://connectnext-technologies.github.io/cxpubliclinks/">
+                Our Website
+            </a></li>
+            <!-- Invalid links -->
+            <li><a class="invalid" href="invalid page.html">Invalid Space</a></li>
+            <li><a class="invalid" href="">Empty Link</a></li>
+            <li><a class="invalid" href="page.html" more">Bad Quotes</a></li>
         </ul>
-    </div>
-
-    <div class="link-section">
-        <h2>External Links (Different Domains)</h2>
-        <ul>
-            <li><a href="https://external-site.com/page.html">External site with HTTPS</a></li>
-            <li><a href="http://another-site.org/index.html">External site with HTTP</a></li>
-            <li><a href="https://subdomain.external.net/path/document.html">External site with subdomain</a></li>
-            <li><a href="https://external-domain.io/path/to/resource.html?param=value">External link with query parameters</a></li>
-        </ul>
-    </div>
-
-    <div class="link-section">
-        <h2>Edge Cases</h2>
-        <ul>
-            <li><a href="javascript:void(0)">JavaScript protocol link</a></li>
-            <li><a href="#section">Hash/anchor link</a></li>
-            <li><a href="">Empty href attribute</a></li>
-            <li><a href="mailto:test@example.com">Mailto link</a></li>
-            <li><a href="tel:+123456789">Tel link</a></li>
-            <li><a href="page with spaces.html">URL with spaces</a></li>
-            <li><a href="page.pdf">Non-HTML document</a></li>
-            <li>Text with embedded URL like https://embedded-url.com/page.html but not in an anchor tag</li>
-            <li><a href="https://example.com">Link with the same text as href</a></li>
-        </ul>
-    </div>
-
-    <div class="link-section">
-        <h2>Malformed Links</h2>
-        <ul>
-            <li><a href="https://malformed"quote.com/page.html">Link with quote in URL</a></li>
-            <li><a href="https://broken<bracket.com/page.html">Link with bracket in URL</a></li>
-            <li><a href="https://incomplete-protocol.com">Link with incomplete protocol</a></li>
-            <li><a href="/path/to/page.html">Absolute path without domain</a></li>
-        </ul>
-    </div>
+    </nav>
 </body>
+
 </html>
