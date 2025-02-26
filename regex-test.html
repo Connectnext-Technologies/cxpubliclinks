@@ -27,10 +27,6 @@
         background-color: #ffebee;
       }
 
-      .other {
-        background-color: #e8eaf6;
-      }
-
       ul {
         list-style-type: none;
         padding-left: 0;
@@ -245,8 +241,8 @@
     </div>
 
     <!-- OTHER EXCEPTION CASES -->
-    <div class="section other">
-      <h2>Other Exception Cases</h2>
+    <div class="section success">
+      <h2>Other Exception Cases Valid</h2>
       <ul>
         <li>
           <a href="http://sample.com#section">http://sample.com#section</a>
@@ -255,19 +251,9 @@
         <li>
           <a href="https://example.com?param=value">With query parameters</a>
         </li>
-        <li><a href="mailto:someone@example.com">Send Email</a></li>
-        <li><a href="tel:+1234567890">Call Us</a></li>
-        <li><a href="javascript:alert('Hello!')">JavaScript Link</a></li>
         <li>
           <a href="//google.com">Protocol-relative URL</a>
         </li>
-      </ul>
-    </div>
-
-    <!-- Additional Test Cases -->
-    <div class="section other">
-      <h2>Additional Test Cases</h2>
-      <ul>
         <li><a href="index.html">Simple relative link</a></li>
         <li><a href="./">Current directory</a></li>
         <li><a href="/">Root directory</a></li>
@@ -279,8 +265,18 @@
             >URL with trailing space</a
           >
         </li>
-        <li><a href="#local-anchor">Local anchor</a></li>
         <li><a href="?query=test">Query-only URL</a></li>
+      </ul>
+    </div>
+
+    <!-- Additional Test Cases -->
+    <div class="section failure">
+      <h2>Additional Test Cases failure</h2>
+      <ul>
+        <li><a href="#local-anchor">Local anchor</a></li>
+        <li><a href="mailto:someone@example.com">Send Email</a></li>
+        <li><a href="tel:+1234567890">Call Us</a></li>
+        <li><a href="javascript:alert('Hello!')">JavaScript Link</a></li>
       </ul>
     </div>
   </body>
