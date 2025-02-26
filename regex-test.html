@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regex Link Testing</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      h1,
+      h2,
+      h3 {
+        color: #333;
+      }
+
+      .section {
+        margin-bottom: 30px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .success {
+        background-color: #e8f5e9;
+      }
+
+      .failure {
+        background-color: #ffebee;
+      }
+
+      .other {
+        background-color: #e8eaf6;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+        padding: 8px;
+        border-radius: 4px;
+      }
+
+      li:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      a {
+        text-decoration: none;
+        color: #0066cc;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Comprehensive href Test Page</h1>
+    <p>
+      This page contains various types of href links to test regex validation
+      patterns.
+    </p>
+
+    <!-- FQDN URL MATCHES (SUCCESS) -->
+    <div class="section success">
+      <h2>FQDN URL - Valid Links</h2>
+      <ul>
+        <li>
+          <a href="https://connectnext-technologies.github.io/cxpubliclinks/"
+            >connectnext-technologies.github.io/cxpubliclinks/</a
+          >
+        </li>
+        <li>
+          <a href="https://connectnext-technologies.github.com/index.html"
+            >connectnext-technologies.github.com/index.html</a
+          >
+        </li>
+        <li>
+          <a href="https://connectnext-technologies.github.com/index.cgi"
+            >connectnext-technologies.github.com/index.cgi</a
+          >
+        </li>
+        <li>
+          <a href="https://connectnext-technologies.github.com/index"
+            >connectnext-technologies.github.com/index</a
+          >
+        </li>
+        <li><a href="https://example.com/page.php">example.com/page.php</a></li>
+        <li>
+          <a href="https://subdomain.example.org/path/to/resource.jsp"
+            >subdomain.example.org/path/to/resource.jsp</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- FQDN URL MATCHES (FAILURE) -->
+    <div class="section failure">
+      <h2>FQDN URL - Invalid Links</h2>
+      <ul>
+        <li>
+          <a href="https://connectnext-technologies.github.com/index.abc"
+            >connectnext-technologies.github.com/index.abc</a
+          >
+        </li>
+        <li>
+          <a href="https://connectnext-technologies.github.com/index.pdf"
+            >connectnext-technologies.github.com/index.pdf</a
+          >
+        </li>
+        <li>
+          <a href="https://connectnext-technologies.github.com/index.docx"
+            >connectnext-technologies.github.com/index.docx</a
+          >
+        </li>
+        <li>
+          <a href="https://connectnext-technologies.github.com/index.jpg"
+            >connectnext-technologies.github.com/index.jpg</a
+          >
+        </li>
+        <li>
+          <a href="https://connectnext-technologies.github.com/ind ex.jpg"
+            >connectnext-technologies.github.com/ind ex.jpg</a
+          >
+        </li>
+        <li>
+          <a href="https://connectnext-technologies.git^ub.com/index.html"
+            >connectnext-technologies.git^ub.com/index.html</a
+          >
+        </li>
+        <li>
+          <a href="https://example.com/page space.html"
+            >example.com/page space.html</a
+          >
+        </li>
+        <li>
+          <a href="https://example!.com/page.html">example!.com/page.html</a>
+        </li>
+        <li><a href="https:/example.com">Missing slash in protocol</a></li>
+        <li><a href="http:///example.com">Too many slashes</a></li>
+      </ul>
+    </div>
+
+    <!-- DIR PATH URL MATCHES (SUCCESS) -->
+    <div class="section success">
+      <h2>Directory Path - Valid Links</h2>
+      <ul>
+        <li><a href="path/tofile/welcome">path/tofile/welcome</a></li>
+        <li>
+          <a href="/path/tofile/welcome.html">/path/tofile/welcome.html</a>
+        </li>
+        <li>
+          <a href="/path/tofile/welcome.php">/path/tofile/welcome.php</a>
+        </li>
+        <li>
+          <a href="folder/subfolder/page.asp">folder/subfolder/page.asp</a>
+        </li>
+        <li>
+          <a href="/root/directory/index.jsp">/root/directory/index.jsp</a>
+        </li>
+        <li><a href="./relative/path.html">./relative/path.html</a></li>
+      </ul>
+    </div>
+
+    <!-- DIR PATH URL MATCHES (FAILURE) -->
+    <div class="section failure">
+      <h2>Directory Path - Invalid Links</h2>
+      <ul>
+        <li><a href="path/tofile/welcome.abc">path/tofile/welcome.abc</a></li>
+        <li>
+          <a href="/path/tofile/welcome.pdf">/path/tofile/welcome.pdf</a>
+        </li>
+        <li>
+          <a href="/path/tofile/welcome.docx">/path/tofile/welcome.docx</a>
+        </li>
+        <li>
+          <a href="/path/to^ile/welcome.docx">/path/to^ile/wel come.docx</a>
+        </li>
+        <li>
+          <a href="/path/toile/wel come.docx">/path/to^ile/wel come.docx</a>
+        </li>
+        <li>
+          <a href="/path/tofile/wel come.php">/path/tofile/wel come.php</a>
+        </li>
+        <li>
+          <a href="folder/sub folder/page.html">folder/sub folder/page.html</a>
+        </li>
+        <li>
+          <a href="/root/direct^ory/file.html">/root/direct^ory/file.html</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- SKIP PATH URL MATCHES (SUCCESS) -->
+    <div class="section success">
+      <h2>Skip Path - Valid Links</h2>
+      <ul>
+        <li><a href="../path/tofile/welcome">../path/tofile/welcome</a></li>
+        <li>
+          <a href="../path/tofile/welcome.html">../path/tofile/welcome.html</a>
+        </li>
+        <li>
+          <a href="../path/tofile/welcome.php">../path/tofile/welcome.php</a>
+        </li>
+        <li>
+          <a href="../../uplevels/page.html">../../uplevels/page.html</a>
+        </li>
+        <li>
+          <a href="../../../multiple/up/levels.jsp"
+            >../../../multiple/up/levels.jsp</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- SKIP PATH URL MATCHES (FAILURE) -->
+    <div class="section failure">
+      <h2>Skip Path - Invalid Links</h2>
+      <ul>
+        <li>
+          <a href="../path/tofile/welcome.abc">../path/tofile/welcome.abc</a>
+        </li>
+        <li>
+          <a href="../path/tofile/welcome.pdf">../path/tofile/welcome.pdf</a>
+        </li>
+        <li>
+          <a href="../path/tofile/welcome.docx">../path/tofile/welcome.docx</a>
+        </li>
+        <li>
+          <a href="../path/tofile/welcome.php">../path/tofile/welcome.php</a>
+        </li>
+        <li>
+          <a href="../path/tofile/wel come.php">../path/tofile/wel come.php</a>
+        </li>
+        <li>
+          <a href="../path/to^file/page.html">../path/to^file/page.html</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- OTHER EXCEPTION CASES -->
+    <div class="section other">
+      <h2>Other Exception Cases</h2>
+      <ul>
+        <li>
+          <a href="http://sample.com#section">http://sample.com#section</a>
+          (should transform to: http://sample.com)
+        </li>
+        <li>
+          <a href="https://example.com?param=value">With query parameters</a>
+        </li>
+        <li><a href="mailto:someone@example.com">Send Email</a></li>
+        <li><a href="tel:+1234567890">Call Us</a></li>
+        <li><a href="javascript:alert('Hello!')">JavaScript Link</a></li>
+        <li>
+          <a href="//google.com">Protocol-relative URL</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Additional Test Cases -->
+    <div class="section other">
+      <h2>Additional Test Cases</h2>
+      <ul>
+        <li><a href="index.html">Simple relative link</a></li>
+        <li><a href="./">Current directory</a></li>
+        <li><a href="/">Root directory</a></li>
+        <li>
+          <a href=" https://google.com">URL with leading space</a>
+        </li>
+        <li>
+          <a href="https://example.com/space-suffix.html "
+            >URL with trailing space</a
+          >
+        </li>
+        <li><a href="#local-anchor">Local anchor</a></li>
+        <li><a href="?query=test">Query-only URL</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
