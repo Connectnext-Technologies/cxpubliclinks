@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Full HTML sample with nav, media, form, and semantic tags."
+    />
+    <meta
+      name="keywords"
+      content="HTML, full sample, nav, form, image, video, semantic, accessibility"
+    />
+    <meta name="author" content="Your Name" />
+    <title>HTML Full DOM Sample</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f7f7f7;
+      }
+      header,
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 2rem;
+        padding: 0;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      main {
+        padding: 2rem;
+      }
+      section {
+        margin-bottom: 2rem;
+      }
+      form {
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+      }
+      form input,
+      textarea,
+      button {
+        display: block;
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+      }
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My Awesome Webpage</h1>
+      <nav>
+        <ul>
+          <li><a href="#about" aria-label="About section">About</a></li>
+          <li><a href="#media" aria-label="Media section">Media</a></li>
+          <li>
+            <a href="#contact" aria-label="Contact form section">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About This Page</h2>
+        <p>
+          This HTML page showcases common elements in the DOM including
+          navigation, media, forms, and semantic structure.
+        </p>
+      </section>
+
+      <section id="media">
+        <h2>Media Section</h2>
+        <h3>Image:</h3>
+        <figure>
+          <img
+            width="400px"
+            src="https://connectnext.ai/hs-fs/hubfs/connectnext-ai-Logo-Final-Files-.png?width=1396&height=328&name=connectnext-ai-Logo-Final-Files-.png"
+            alt="Sample Placeholder Image"
+          />
+          <figcaption>A sample image using a placeholder service.</figcaption>
+        </figure>
+
+        <h3>Video:</h3>
+        <video controls>
+          <source
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <form onsubmit="submitForm(event)" aria-label="Contact form">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            aria-required="true"
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            aria-required="true"
+          />
+
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            aria-required="true"
+          ></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+        alert("Form submitted! Thanks for contacting us.");
+      }
+    </script>
+  </body>
+</html>
